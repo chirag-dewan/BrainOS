@@ -1,0 +1,47 @@
+{
+  "command_timeout": 5,
+  "templates_folder": "",
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": false,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "user_scripts_folder": "",
+  "enable_folder_templates": true,
+  "folder_templates": [
+    {
+      "folder": "00_Dashboard",
+      "template": "_Templates/MOC Template.md"
+    },
+    {
+      "folder": "01_Inbox",
+      "template": "_Templates/Fleeting Note Template.md"
+    },
+    {
+      "folder": "02_Permanent",
+      "template": "_Templates/Permanent Note Template.md"
+    },
+    {
+      "folder": "03_References",
+      "template": "_Templates/Literature Note Template.md"
+    }
+  ],
+  "enable_file_templates": false,
+  "file_templates": [
+    {
+      "regex": ".*",
+      "template": ""
+    }
+  ],
+  "syntax_highlighting": true,
+  "syntax_highlighting_mobile": false,
+  "enabled_templates_hotkeys": [
+    ""
+  ],
+  "startup_templates": []
+}

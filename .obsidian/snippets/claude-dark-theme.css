@@ -1,0 +1,364 @@
+/* Claude Dark Mode Theme for Obsidian */
+/* A dark theme inspired by Claude's clean aesthetic */
+
+:root {
+  /* Font settings */
+  --default-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --editor-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --monospace-font: 'SF Mono', 'Roboto Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  
+  /* Claude Dark theme colors */
+  --background-primary: #1a1a1a;        /* Main background */
+  --background-primary-alt: #242424;    /* Alternate background */
+  --background-secondary: #2a2a2a;      /* Secondary background */
+  --background-secondary-alt: #333333;  /* Secondary alternate */
+  --background-modifier-border: #444444;/* Borders */
+  
+  /* Text colors */
+  --text-normal: #e0e0e0;               /* Main text */
+  --text-muted: #a0a0a0;                /* Secondary text */
+  --text-faint: #707070;                /* Tertiary text */
+  
+  /* Claude purple accent adapted for dark mode */
+  --text-accent: #a885ee;               /* Purple accent text */
+  --text-accent-hover: #b99cf2;         /* Hover state */
+  --interactive-accent: #8867d7;        /* Buttons, active elements */
+  --interactive-accent-hover: #9b7de2;  /* Interactive hover */
+  
+  /* Other UI colors */
+  --background-modifier-hover: rgba(136, 103, 215, 0.1);  /* Hover backgrounds */
+  --scrollbar-bg: #333333;              /* Scrollbar track */
+  --scrollbar-thumb-bg: #555555;        /* Scrollbar thumb */
+  --quote-opening-modifier: #8867d7;    /* Blockquote bar */
+}
+
+/* Typography */
+body {
+  font-family: var(--default-font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+.markdown-source-view, .markdown-preview-view {
+  font-family: var(--editor-font);
+  color: var(--text-normal);
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--default-font);
+  font-weight: 600;
+  color: var(--text-normal);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-preview-view h1 {
+  font-size: 2em;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.25em;
+}
+
+.markdown-preview-view h2 {
+  font-size: 1.7em;
+  letter-spacing: -0.01em;
+}
+
+.markdown-preview-view h3 {
+  font-size: 1.4em;
+}
+
+.markdown-preview-view h4 {
+  font-size: 1.2em;
+}
+
+.markdown-preview-view h5 {
+  font-size: 1.1em;
+}
+
+.markdown-preview-view h6 {
+  font-size: 1em;
+  color: var(--text-muted);
+}
+
+/* Links */
+a {
+  color: var(--text-accent);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--text-accent-hover);
+}
+
+.internal-link {
+  color: var(--text-accent);
+  text-decoration: none;
+}
+
+.internal-link:hover {
+  color: var(--text-accent-hover);
+  text-decoration: underline;
+}
+
+/* Code blocks */
+.markdown-preview-view code,
+.cm-s-obsidian .cm-inline-code {
+  font-family: var(--monospace-font);
+  font-size: 0.9em;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  background-color: var(--background-secondary);
+}
+
+.markdown-preview-view pre {
+  padding: 1em;
+  border-radius: 6px;
+  background-color: var(--background-secondary-alt);
+  font-family: var(--monospace-font);
+  line-height: 1.5;
+  margin: 1em 0;
+}
+
+.markdown-preview-view pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+li {
+  margin: 0.3em 0;
+}
+
+ul li::marker {
+  color: var(--text-accent);
+}
+
+/* Task lists */
+.task-list-item-checkbox {
+  margin-right: 0.5em;
+  position: relative;
+  top: 1px;
+}
+
+.is-checked {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 1.5em 0;
+  padding: 0.5em 1.2em;
+  border-left: 3px solid var(--quote-opening-modifier);
+  background-color: var(--background-primary-alt);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+th {
+  padding: 0.75em;
+  background-color: var(--background-secondary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  font-weight: 600;
+  text-align: left;
+}
+
+td {
+  padding: 0.75em;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background-color: var(--background-primary-alt);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--interactive-accent);
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 2em 0;
+}
+
+/* Tags */
+a.tag {
+  color: var(--text-muted);
+  background-color: var(--background-secondary);
+  padding: 2px 8px;
+  border-radius: 14px;
+  font-size: 0.85em;
+  line-height: 1.6;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a.tag:hover {
+  color: var(--text-accent);
+  background-color: var(--background-modifier-hover);
+  text-decoration: none;
+}
+
+/* UI Elements */
+.workspace-ribbon {
+  background-color: var(--background-secondary);
+}
+
+.workspace-tab-header-container {
+  background-color: var(--background-secondary);
+}
+
+.workspace-tab-header.is-active {
+  color: var(--text-accent);
+}
+
+.nav-file-title, .nav-folder-title {
+  color: var(--text-normal);
+  font-weight: 400;
+}
+
+.nav-file-title:hover, .nav-folder-title:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.nav-file-title.is-active {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-accent);
+  font-weight: 500;
+}
+
+/* Buttons */
+button {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+button.mod-cta {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+}
+
+button.mod-cta:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* Modals */
+.modal {
+  border-radius: 8px;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-bg {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Inputs */
+input[type="text"], 
+input[type="search"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"] {
+  background-color: var(--background-primary-alt);
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  border-radius: 4px;
+  padding: 0.5em;
+}
+
+input:focus {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 1px var(--interactive-accent);
+}
+
+/* Graph view */
+.graph-view.color-circle, 
+.graph-view.color-fill-highlight, 
+.graph-view.color-line-highlight {
+  color: var(--interactive-accent);
+}
+
+.graph-view.color-text {
+  color: var(--text-normal);
+}
+
+.graph-view.color-line {
+  color: var(--background-modifier-border);
+}
+
+.graph-view.color-fill {
+  color: var(--background-secondary);
+}
+
+/* Status bar */
+.status-bar {
+  background-color: var(--background-secondary);
+  color: var(--text-muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+/* Mobile adjustments */
+@media (max-width: 800px) {
+  .markdown-preview-view {
+    padding: 1rem;
+  }
+  
+  .markdown-preview-view h1 {
+    font-size: 1.8em;
+  }
+  
+  .markdown-preview-view h2 {
+    font-size: 1.5em;
+  }
+}
